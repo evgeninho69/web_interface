@@ -8,7 +8,7 @@ from services.project_service import ProjectService
 from utils.database import get_supabase_client
 
 # Загружаем переменные окружения
-load_dotenv('../config.env')
+load_dotenv('../.env')
 
 app = Flask(__name__)
 CORS(app)
@@ -152,6 +152,7 @@ def create_project():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5003)
+    port = int(os.environ.get('BACKEND_PORT', 5003))
+    app.run(debug=True, host='0.0.0.0', port=port)
 
 

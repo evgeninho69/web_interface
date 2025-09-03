@@ -4,10 +4,10 @@ import os
 def get_supabase_client() -> Client:
     """Создание клиента Supabase"""
     url = os.getenv('SUPABASE_URL')
-    key = os.getenv('SUPABASE_SERVICE_ROLE_KEY')
+    key = os.getenv('SUPABASE_SERVICE_ROLE_SECRET')
     
     if not url or not key:
-        raise ValueError("Не найдены переменные окружения SUPABASE_URL или SUPABASE_SERVICE_ROLE_KEY")
+        raise ValueError("Не найдены переменные окружения SUPABASE_URL или SUPABASE_SERVICE_ROLE_SECRET")
     
     return create_client(url, key)
 
