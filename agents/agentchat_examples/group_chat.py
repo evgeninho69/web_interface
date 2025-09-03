@@ -3,8 +3,8 @@
 Пример группового чата с несколькими агентами
 """
 
-import autogen
-from autogen import AssistantAgent, UserProxyAgent, GroupChat, GroupChatManager
+from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
+from autogen_agentchat.teams import GroupChat, GroupChatManager
 
 # Устанавливаем OpenAI API ключ из переменной окружения
 import os
